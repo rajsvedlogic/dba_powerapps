@@ -12,10 +12,10 @@ on:
 
 env:
 #edit your values here
-  DEV_ENVIRONMENT_URL: https://oiicrmdev.crm.dynamics.com
-  TEST_ENVIRONMENT_URL: https://oiicrmtst.crm.dynamics.com
-  USERNAME: gsingh9@oceaneering.com
-  APPLICATION_ID: 34aad1ed-ee29-4875-8a9e-a854b35c9987
+  DEV_ENVIRONMENT_URL: https://org8474aff6.crm8.dynamics.com/
+  TEST_ENVIRONMENT_URL: https://orgc98173ac.crm8.dynamics.com/
+  USERNAME: rjSharma@myaction123.onmicrosoft.com
+  APPLICATION_ID: 54d911a3-513b-4a7f-8254-50093215d5b4
   TENANT_ID: 97525e9a-595d-472c-8248-0dc58f852d61
   CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
   SOLUTION_EXPORTED_FOLDER: out/exported/
@@ -23,10 +23,10 @@ env:
   SOLUTION_TARGET_FOLDER: solutions/
 
 jobs:
-  export-from-dev:
-    runs-on: windows-latest
-    env:
-      RUNNER_DEBUG: 1
+ export-from-dev:
+  runs-on: windows-latest
+   env:
+    RUNNER_DEBUG: 1
 
     steps:
     - uses: actions/checkout@v2
@@ -59,10 +59,11 @@ jobs:
         solution-type: 'Unmanaged'
         overwrite-files: true
 
-    - name: branch-solution, prepare it for a PullRequest
-      uses: microsoft/powerplatform-actions/branch-solution@0.4.0
-      with:
+     - name: branch-solution, prepare it for a PullRequest
+       uses: microsoft/powerplatform-actions/branch-solution@0.4.0
+       with:
         solution-folder: ${{ env.SOLUTION_FOLDER}}/${{ github.event.inputs.solution_name }}
         solution-target-folder: ${{ env.SOLUTION_TARGET_FOLDER}}/${{ github.event.inputs.solution_name }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         allow-empty-commit: true
+       
