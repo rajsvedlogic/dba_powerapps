@@ -1,0 +1,68 @@
+name: export-x-solution
+# Export solution from DEV environment
+# unpack it and prepare, commit and push a git branch with the changes
+
+on:
+  workflow_dispatch:
+    inputs:
+      # Enter this value (required)
+      solution_name:
+        description: 'name of the solution to worked on from Power Platform'
+        required: true
+
+env:
+#edit your values here
+  DEV_ENVIRONMENT_URL: https://oiicrmdev.crm.dynamics.com
+  TEST_ENVIRONMENT_URL: https://oiicrmtst.crm.dynamics.com
+  USERNAME: gsingh9@oceaneering.com
+  APPLICATION_ID: 34aad1ed-ee29-4875-8a9e-a854b35c9987
+  TENANT_ID: 97525e9a-595d-472c-8248-0dc58f852d61
+  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+  SOLUTION_EXPORTED_FOLDER: out/exported/
+  SOLUTION_FOLDER: out/solutions/
+  SOLUTION_TARGET_FOLDER: solutions/
+
+jobs:
+  export-from-dev:
+    runs-on: windows-latest
+    env:
+      RUNNER_DEBUG: 1
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+
+    - name: who-am-i dev
+      uses: microsoft/powerplatform-actions/who-am-i@0.4.0
+      with:
+        environment-url: ${{env.DEV_ENVIRONMENT_URL}}
+        app-id: ${{env.APPLICATION_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{env.TENANT_ID}}
+
+    - name: export-solution action
+      uses: microsoft/powerplatform-actions/export-solution@0.4.0
+      with:
+        environment-url: ${{env.DEV_ENVIRONMENT_URL}}
+        app-id: ${{env.APPLICATION_ID}}
+        client-secret: ${{ secrets.CLIENT_SECRET }}
+        tenant-id: ${{env.TENANT_ID}}
+        solution-name: ${{ github.event.inputs.solution_name }}
+        solution-output-file: ${{ env.SOLUTION_EXPORTED_FOLDER}}/${{ github.event.inputs.solution_name }}.zip
+
+    - name: unpack-solution action
+      uses: microsoft/powerplatform-actions/unpack-solution@0.4.0
+      with:
+        solution-file: ${{ env.SOLUTION_EXPORTED_FOLDER}}/${{ github.event.inputs.solution_name }}.zip
+        solution-folder: ${{ env.SOLUTION_FOLDER}}/${{ github.event.inputs.solution_name }}
+        solution-type: 'Unmanaged'
+        overwrite-files: true
+
+    - name: branch-solution, prepare it for a PullRequest
+      uses: microsoft/powerplatform-actions/branch-solution@0.4.0
+      with:
+        solution-folder: ${{ env.SOLUTION_FOLDER}}/${{ github.event.inputs.solution_name }}
+        solution-target-folder: ${{ env.SOLUTION_TARGET_FOLDER}}/${{ github.event.inputs.solution_name }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        allow-empty-commit: true
