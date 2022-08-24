@@ -13,7 +13,7 @@ env:
 #edit your values here
   BUILD_ENVIRONMENT_URL: https://orgc98173ac.crm8.dynamics.com/
   APPLICATION_ID: 54d911a3-513b-4a7f-8254-50093215d5b4
-  TENANT_ID: 97525e9a-595d-472c-8248-0dc58f852d61
+  TENANT_ID: 2e138588-c1c5-4b9c-b877-fbc27ece684a
   CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
   SOLUTION_SHIPPING_FOLDER: out/ship/
   SOLUTION_OUTBOUND_FOLDER: out/solutions/
