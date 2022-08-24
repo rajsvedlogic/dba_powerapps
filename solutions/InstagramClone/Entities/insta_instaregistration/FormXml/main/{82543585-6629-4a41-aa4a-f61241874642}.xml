@@ -1,0 +1,255 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <systemform>
+    <formid>{82543585-6629-4a41-aa4a-f61241874642}</formid>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form headerdensity="HighWithControls">
+      <tabs>
+        <tab verticallayout="true" id="{3f7b70d2-19d4-490d-8f05-7a0d0cb206e7}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{21631802-c5a9-4390-afc7-b15821f8a710}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{79e4e92c-efa4-435e-92df-a92dff4ee9e0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="insta_name" classid="{F9A8A302-114E-466A-B582-6771B2AE0D92}" datafieldname="insta_name" uniqueid="{d4cbbd95-d513-9259-b6c9-e50b58a09c0d}" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fcea411b-c484-47d7-a504-83bb2edad15a}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="EmailINST" languagecode="1033" />
+                        </labels>
+                        <control id="insta_emailinst" classid="{ADA2203E-B4CD-49BE-9DDF-234642B43B52}" datafieldname="insta_emailinst" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{6c289af5-70e9-4333-914e-ef52346b9fdf}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Password" languagecode="1033" />
+                        </labels>
+                        <control id="insta_password" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="insta_password" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2b325fea-d5e5-408b-87cb-1f655f741412}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Date of Birth" languagecode="1033" />
+                        </labels>
+                        <control id="insta_dateofbirth" classid="{5B773807-9FB2-42DB-97C3-7A91EFF8ADFF}" datafieldname="insta_dateofbirth" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{97dcafb7-1d8c-4ccc-a1b6-07ac2fd4913f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Age" languagecode="1033" />
+                        </labels>
+                        <control id="insta_age" classid="{C6D124CA-7EDA-4A60-AEA9-7FB8D318B68F}" datafieldname="insta_age" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{bb7badc9-3d69-484f-b8c2-74921099988d}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Mobile No" languagecode="1033" />
+                        </labels>
+                        <control id="insta_mobileno" classid="{4273EDBD-AC1D-40D3-9FB2-095C621B552D}" datafieldname="insta_mobileno" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2d5bb010-bb26-42f7-aeb2-62203edc5ce5}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="City" languagecode="1033" />
+                        </labels>
+                        <control id="insta_city" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="insta_city" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ca320a3d-9022-4a47-8bc2-f9301ab9296f}" locklevel="0" colspan="1" rowspan="1">
+                        <labels>
+                          <label description="Image" languagecode="1033" />
+                        </labels>
+                        <control id="insta_image" classid="{7E548B0D-209C-477B-9DCD-F0F44472381D}" datafieldname="insta_image" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{609df6ee-358f-4317-b84c-2c9d499ba5e0}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="{3f7b70d2-19d4-490d-8f05-7a0d0cb206e7}_section_2" showlabel="false" showbar="false" locklevel="0" id="{365a4ee2-4cd3-06ab-155e-c8dde52b6c06}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{4c6516ee-a435-b984-4847-243b522c0050}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <header id="{ac24531f-f561-466c-ab7b-578a3ed3031e}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{aa088461-35d4-6074-59e3-5a479dc98498}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="City" languagecode="1033" />
+              </labels>
+              <control id="header_insta_city" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="insta_city" disabled="false" />
+            </cell>
+            <cell id="{d4242313-c2e9-9c76-362d-0ee9394ae033}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Age" languagecode="1033" />
+              </labels>
+              <control id="header_insta_age" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="insta_age" disabled="false" />
+            </cell>
+            <cell id="{ebec67e1-9c36-9550-0954-8e5b13751a5b}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Created By" languagecode="1033" />
+              </labels>
+              <control id="header_createdby" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdby" disabled="false" />
+            </cell>
+          </row>
+          <row>
+            <cell id="{ce628372-3dd7-33c5-2c21-a8eb60714402}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{a5dca1d6-d28d-c4ac-01be-d2b68a05d427}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Date of Birth" languagecode="1033" />
+              </labels>
+              <control id="header_insta_dateofbirth" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="insta_dateofbirth" disabled="false" />
+            </cell>
+            <cell id="{152c7211-291e-5d06-5d21-0c255794c9a3}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="EmailINST" languagecode="1033" />
+              </labels>
+              <control id="header_insta_emailinst" classid="{ADA2203E-B4CD-49be-9DDF-234642B43B52}" datafieldname="insta_emailinst" disabled="false" />
+            </cell>
+          </row>
+        </rows>
+      </header>
+      <footer id="{a125e375-61b1-4f59-9b7f-be3e0f13a589}" celllabelposition="Top" columns="111" labelwidth="115" celllabelalignment="Left">
+        <rows>
+          <row>
+            <cell id="{cd424953-0a4f-45a2-85ff-7405861226a8}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{617d1b83-a82e-4da6-bdef-5de4163dd280}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{d392d567-556f-4ed1-92e6-4cde171ec1e3}" showlabel="false">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+          </row>
+        </rows>
+      </footer>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions>
+        <controlDescription forControl="{d4cbbd95-d513-9259-b6c9-e50b58a09c0d}">
+          <customControl id="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}">
+            <parameters>
+              <datafieldname>insta_name</datafieldname>
+            </parameters>
+          </customControl>
+          <customControl formFactor="0" name="theater_VLCustomJavascriptButtonControl.VLCustomJavascriptButtonControl">
+            <parameters>
+              <CustomJS>insta_name</CustomJS>
+              <ScriptUrl static="true" type="SingleLine.Text">https://vedtest.crm8.dynamics.com//WebResources/insta_test</ScriptUrl>
+              <FunctionName static="true" type="SingleLine.Text">popUpMap</FunctionName>
+              <ButtonText static="true" type="SingleLine.Text">Open Alert</ButtonText>
+            </parameters>
+          </customControl>
+          <customControl formFactor="1" name="theater_VLCustomJavascriptButtonControl.VLCustomJavascriptButtonControl">
+            <parameters>
+              <CustomJS>insta_name</CustomJS>
+              <ScriptUrl static="true" type="SingleLine.Text">https://vedtest.crm8.dynamics.com//WebResources/insta_test</ScriptUrl>
+              <FunctionName static="true" type="SingleLine.Text">popUpMap</FunctionName>
+              <ButtonText static="true" type="SingleLine.Text">Open Alert</ButtonText>
+            </parameters>
+          </customControl>
+          <customControl formFactor="2" name="theater_VLCustomJavascriptButtonControl.VLCustomJavascriptButtonControl">
+            <parameters>
+              <CustomJS>insta_name</CustomJS>
+              <ScriptUrl static="true" type="SingleLine.Text">https://vedtest.crm8.dynamics.com//WebResources/insta_test</ScriptUrl>
+              <FunctionName static="true" type="SingleLine.Text">popUpMap</FunctionName>
+              <ButtonText static="true" type="SingleLine.Text">Open Alert</ButtonText>
+            </parameters>
+          </customControl>
+        </controlDescription>
+      </controlDescriptions>
+      <DisplayConditions Order="0" FallbackForm="true">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Information" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

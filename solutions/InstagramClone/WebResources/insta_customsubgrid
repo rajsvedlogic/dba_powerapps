@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="ClientGlobalContext.js.aspx" type="text/javascript"></script>
+    <script src="https://unpkg.com/ag-grid-community/dist/ag-grid-community.min.js"></script>
+    <script type="text/javascript">
+        const column=[
+            {field:"Name",headerName: "Username"},
+            {field:"Password",headerName:"password"},
+            {field:"Email",headerName:"Email"}
+        ];
+        let rowData = [];
+        document.addEventListener('DOMContentLoaded',async () => {
+        let instaID = Xrm.Page.data.entity.getId().replace("{", "").replace("}", "");
+        laborData = await getAggregateLaborCosts(instaID);
+        materialData = await getAggregateMaterialCosts(instaID); 
+
+        rowData = [...laborData, ...materialData];
+     
+        const gridDiv = document.querySelector('#myGrid');
+
+       
+        let gridOptions = {
+            column: column,
+            rowData: rowData
+        };
+
+        new agGrid.Grid(gridDiv, gridOptions);
+
+        gridOptions.columnApi.sizeColumnsToFit();
+
+        });
+        async function executeFetch(fetchXML) {
+
+            let encodedFetchXML = "?fetchXml=" + encodeURIComponent(fetchXML);
+
+            return await Xrm.WebApi.retrieveMultipleRecords("insta_instaregistration", encodedFetchXML);
+
+        }
+        async function getAggregateLaborCosts(Bid) {
+
+let fetchXML =
+    `<fetch aggregate="true">
+<entity name="insta_instaregistration">
+            <attribute name="insta_name"/>
+            <attribute name="insta_password"/>
+            <attribute name="insta_emailinst"/>
+            <order attribute="insta_name" descending="false"/>
+            <filter type="and">
+            <condition attribute="insta_instaregistrationid" operator="eq" value="${Bid}"/>
+            </filter>
+            </entity>
+            </fetch>`;
+
+let response = await executeFetch(fetchXML);
+
+let result = [];
+
+for (let entity of response.entities) {
+    let floorrate = entity["insta_name"];
+    let bidrate = entity["insta_emailinst"];
+    let position = entity["insta_password"];
+
+    result.push({
+        "insta_name": floorrate,
+        "insta_emailinst": bidrate,
+        "insta_password": position
+    });
+}
+
+return result;
+
+}
+
+async function getAggregateMaterialCosts(Bid) {
+
+let fetchXML =
+    `<fetch aggregate="true">
+<entity name="ocn_bidmaterialcost">
+    <attribute name="ocn_equipmenttype" alias="equipmenttype" groupby="true" />
+    <attribute name="ocn_floorrate" alias="floorrate" aggregate="sum" />
+    <attribute name="ocn_rate" alias="rate" aggregate="sum" />
+    <filter>
+        <condition attribute="ocn_position" operator="not-null" />
+    </filter>
+    <filter type="or">
+        <condition attribute="ocn_bid" operator="eq" value="${Bid}" />
+        <condition attribute="ocn_revisionbid" operator="eq" value="${Bid}" />
+    </filter>
+</entity>
+</fetch>`;
+
+let response = await executeFetch(fetchXML);
+
+let result = [];
+
+for (let entity of response.entities) {
+    
+    let floorrate = entity["insta_name"];
+    let bidrate = entity["insta_emailinst"];
+    let position = entity["insta_password"];
+
+    result.push({
+        "insta_name": floorrate,
+        "insta_emailinst": bidrate,
+        "insta_password": position
+    });
+}
+
+return result;
+
+}
+
+
+</script>
+</head>
+<body>
+    <div id="mygrid"></div>
+</body>
+</html>

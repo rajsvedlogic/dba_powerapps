@@ -1,0 +1,5 @@
+function popUpMap() {
+
+    alert("Clicked");
+
+}
