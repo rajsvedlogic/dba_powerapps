@@ -17,7 +17,7 @@ env:
   USERNAME: rajs@vedlogic.com
   APPLICATION_ID: 315ba50d-600a-4db5-abc2-399b8ea646b7
   TENANT_ID: db7544a1-c9e1-4803-b731-4128869324a5
-  CLIENT_SECRET: EVY8Q~aIBwizKZLEy8nj_pTIGiBhw9UDzTaWgcpF
+  CLIENT_SECRET: BWw8Q~lS3m9T.6goW~yIxpxkTjogjz6e3F4iBaJk
   SOLUTION_EXPORTED_FOLDER: out/exported/
   SOLUTION_FOLDER: out/solutions/
   SOLUTION_TARGET_FOLDER: solutions/
@@ -38,7 +38,7 @@ jobs:
       with:
         environment-url: https://vedtest.crm8.dynamics.com/
         app-id: 315ba50d-600a-4db5-abc2-399b8ea646b7
-        client-secret: EVY8Q~aIBwizKZLEy8nj_pTIGiBhw9UDzTaWgcpF
+        client-secret: BWw8Q~lS3m9T.6goW~yIxpxkTjogjz6e3F4iBaJk
         tenant-id: db7544a1-c9e1-4803-b731-4128869324a5
 
     - name: export-solution action
@@ -46,7 +46,7 @@ jobs:
       with:
         environment-url: https://vedtest.crm8.dynamics.com/
         app-id: 315ba50d-600a-4db5-abc2-399b8ea646b7
-        client-secret: EVY8Q~aIBwizKZLEy8nj_pTIGiBhw9UDzTaWgcpF
+        client-secret: BWw8Q~lS3m9T.6goW~yIxpxkTjogjz6e3F4iBaJk
         tenant-id: db7544a1-c9e1-4803-b731-4128869324a5
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ env.SOLUTION_EXPORTED_FOLDER}}/${{ github.event.inputs.solution_name }}.zip
