@@ -17,16 +17,16 @@ env:
   USERNAME: rajs@vedlogic.com
   APPLICATION_ID: 315ba50d-600a-4db5-abc2-399b8ea646b7
   TENANT_ID: db7544a1-c9e1-4803-b731-4128869324a5
-  CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+  CLIENT_SECRET: EVY8Q~aIBwizKZLEy8nj_pTIGiBhw9UDzTaWgcpF
   SOLUTION_EXPORTED_FOLDER: out/exported/
   SOLUTION_FOLDER: out/solutions/
   SOLUTION_TARGET_FOLDER: solutions/
 
 jobs:
-  export-from-dev:
-    runs-on: windows-latest
-    env:
-      RUNNER_DEBUG: 1
+ export-from-dev:
+  runs-on: windows-latest
+   env:
+    RUNNER_DEBUG: 1
 
     steps:
     - uses: actions/checkout@v2
@@ -36,18 +36,18 @@ jobs:
     - name: who-am-i dev
       uses: microsoft/powerplatform-actions/who-am-i@0.4.0
       with:
-        environment-url: ${{env.DEV_ENVIRONMENT_URL}}
-        app-id: ${{env.APPLICATION_ID}}
-        client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{env.TENANT_ID}}
+        environment-url: https://vedtest.crm8.dynamics.com/
+        app-id: 315ba50d-600a-4db5-abc2-399b8ea646b7
+        client-secret: EVY8Q~aIBwizKZLEy8nj_pTIGiBhw9UDzTaWgcpF
+        tenant-id: db7544a1-c9e1-4803-b731-4128869324a5
 
     - name: export-solution action
       uses: microsoft/powerplatform-actions/export-solution@0.4.0
       with:
-        environment-url: ${{env.DEV_ENVIRONMENT_URL}}
-        app-id: ${{env.APPLICATION_ID}}
-        client-secret: ${{ secrets.CLIENT_SECRET }}
-        tenant-id: ${{env.TENANT_ID}}
+        environment-url: https://vedtest.crm8.dynamics.com/
+        app-id: 315ba50d-600a-4db5-abc2-399b8ea646b7
+        client-secret: EVY8Q~aIBwizKZLEy8nj_pTIGiBhw9UDzTaWgcpF
+        tenant-id: db7544a1-c9e1-4803-b731-4128869324a5
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ env.SOLUTION_EXPORTED_FOLDER}}/${{ github.event.inputs.solution_name }}.zip
 
@@ -59,10 +59,11 @@ jobs:
         solution-type: 'Unmanaged'
         overwrite-files: true
 
-    - name: branch-solution, prepare it for a PullRequest
-      uses: microsoft/powerplatform-actions/branch-solution@0.4.0
-      with:
+     - name: branch-solution, prepare it for a PullRequest
+       uses: microsoft/powerplatform-actions/branch-solution@0.4.0
+       with:
         solution-folder: ${{ env.SOLUTION_FOLDER}}/${{ github.event.inputs.solution_name }}
         solution-target-folder: ${{ env.SOLUTION_TARGET_FOLDER}}/${{ github.event.inputs.solution_name }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         allow-empty-commit: true
+       
